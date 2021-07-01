@@ -27,6 +27,9 @@ In this short example we first clone an example dataset to /tmp/example, then st
 git clone https://github.com/openMVG/ImageDataset_SceauxCastle /tmp/example
 docker run -v /tmp/example:/datasets --rm -it spedenaave/dpg
 pipeline.py --input /datasets/images --output /datasets/output --sfm-type incremental --geomodel f --run-openmvg --run-openmvs
+
+
+pipeline.py --input /dataset/siliconpark.9f/images --output /dataset/siliconpark.9f/output --sfm-type incremental --geomodel f --run-openmvg --run-openmvs --cmodel 5 --icmodel 5
 ```
 
 You should now have a reconstructed model at /tmp/example/omvs folder. Use meshlab or something similar to open it. The end result should look something like this:
@@ -206,4 +209,5 @@ You should now have a reconstructed model at /tmp/example/omvs folder. Use meshl
             --txemptycolor [int]
                 Color of surfaces OpenMVS TextureMesh is unable to texture.
                 Default: 0 (black)
+                
         
